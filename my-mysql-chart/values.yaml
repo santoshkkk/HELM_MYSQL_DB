@@ -27,3 +27,7 @@ ingress:
 autoscaling:
   enabled: false
 
+mysql:
+  initFiles:
+    - name: init.sql
+      mountPath: /docker-entrypoint-initdb.d/init.sql
