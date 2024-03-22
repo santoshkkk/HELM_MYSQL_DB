@@ -1,0 +1,29 @@
+image:
+  repository: mysql
+  tag: 5.7
+  pullPolicy: IfNotPresent
+
+mysqlRootPassword: "Root@123"
+mysqlDatabase: "pharmacy"
+
+service:
+  type: LoadBalancer
+  port: 3306
+
+persistence:
+  enabled: true
+  storageClass: "gp2" # storageclass name
+  accessMode: ReadWriteOnce
+  size: 9Gi
+
+# Add any additional configuration parameters here
+
+serviceAccount:
+  create: false
+
+ingress:
+  enabled: false
+
+autoscaling:
+  enabled: false
+
